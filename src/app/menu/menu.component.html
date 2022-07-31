@@ -1,0 +1,99 @@
+
+<div class="body">
+<!--************************************************-->
+<!--************************************************-->
+<!--************************************************-->
+<!--************************************************-->
+<div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div>
+          <img routerLink="/products" class="hlogo" src="./assets/images/logo.PNG" alt="">
+          <strong class="header-title">HappyEats</strong>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            
+          
+              <li class="nav-item">
+                  <button class="btn bthHead" routerLink="/home">
+                    <i class="fas fa-users fa-lg"></i> Home</button>
+              </li>
+             
+             
+              <li class="nav-item">
+                <button class="btn bthHead float-right" (click)="addTocart()">Add to Cart</button>
+
+            </li>
+            <li class="nav-item">
+              <button class="btn bthHead" (click)="gotoPay()">
+                 Buy</button>
+          </li>
+
+<br>
+          <li  class="nav-item" style="color: black;font-style: italic;">
+            Cart Total : {{total}}
+          </li>
+          <br>&nbsp;
+          <li  class="nav-item" style="color: black;font-style: italic;">
+            Total Amount: {{totalAmount}}
+          </li>
+              <!--li class="nav-item">
+                  <button class="btn bthHead float-right" (click)="clearLocal()">Logout</button>
+              </li-->
+          </ul>
+      </div>
+  </nav>
+  <hr>
+</div>
+
+<br>
+<div class="card-top container-fluid">
+  <div class="container d-flex">
+      <div class="container d-flex">
+          <nav class="navbar navbar-expand-lg navbar-light col-md-7">
+              <div class="navSec">
+                  <a (click)="getProducts()" id="allProducts" class="navbar-brand">All Products</a>
+              </div>
+             
+              <div class="navSec">
+                <a (click)="snacks()" id="snacks" class="navbar-brand">Snacks</a>
+            </div>
+
+              <div class="navSec">
+                  <a (click)="beverage()" id="beverage" class="navbar-brand">Beverage</a>
+              </div>              
+          </nav>
+          <div class="form-group col-md-3">
+              <input type="text" class="form-control" name="searchKey" [(ngModel)]="searchKey"
+                   placeholder="Search Product">
+                  <a (click)="search(searchKey)"  class="navbar-brand">search</a>
+          </div>
+      </div>
+  </div>
+</div>
+<br>
+
+<form name="form" #f="ngForm" (ngSubmit)="f.form.valid && addTocart()" novalidate class="feedback-form">
+<div class="container-fluid" style="margin: 0 auto; width: 85%;">
+  <div class="row">
+    <div class="card-deck" *ngFor="let m of model; let index=index" style="padding-right: 3px">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top zoom" src="{{m.url}}" alt="{{m.item}}"  style="height: 190px">
+        <div class="card-block">
+          <div class="card-body">
+            <h5 class="card-title" style="color: black">{{m.item}}</h5>
+            <p class="card-text">Price : Rs.{{m.price}}</p>
+            <p> Quantity Available : {{m.quantity}}</p>
+          </div>
+        </div>
+      </div>
+      <input class="input-group-text input-align" type="number" name="name+{{index}}" min="0" max="{{model[index].quantity}}" value="{{values[index].quantity}}" [(ngModel)]="values[index].quantity">
+    </div>
+  </div>
+</div>
+
+
+<br><br>
+
+</form>
+</div>

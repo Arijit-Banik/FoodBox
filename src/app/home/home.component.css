@@ -1,0 +1,122 @@
+.body {
+  background-image: url("/assets/images/back.jpg"); 
+  width: 100%;
+  color: white;
+  font: 14px Helvetica, sans-serif;
+}
+.header-title{
+  position: relative;
+  top: 8px;
+  left:25px;
+  font-family: 'WindSong', cursive;
+  font-size: 32px;
+  color: goldenrod;
+}
+.hlogo{
+  position:relative;
+  top: 8px;
+  height: 40px;
+  width: 52px;
+  cursor: pointer;
+}
+
+.bigbutton {
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 15px;
+  padding: 20px;
+  width: 120px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.bigbutton span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.bigbutton span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.bigbutton:hover span {
+  padding-right: 25px;
+}
+
+.bigbutton:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.card-top{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background: #fff;
+  background-clip: border-box;
+  border-radius: .25rem;
+  border:1px solid rgba(0, 0, 0, 0.2)
+}
+
+.card{
+  padding: 20px;
+  margin: 15px auto;
+}
+.navSec a:hover{
+ color: #bf1e2e;
+  cursor: pointer;
+}
+.card img{
+  width: 250px;
+  height:200px;
+  margin-bottom:15px;
+  transition: 0.3s ease-in-out;
+}
+
+.card img:hover{
+  transition: 0.3s ease-in-out;
+  transform: scale(1.1);
+}
+
+.form-control{
+  border-radius: 3px;
+  width: 350px;
+  margin-left: 50px;
+  margin-top: 10px;
+}
+
+.carousel-item {
+  height:300px;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover
+}
+

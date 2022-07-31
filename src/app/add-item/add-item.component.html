@@ -1,0 +1,105 @@
+<div class="body">
+<div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div>
+          <img routerLink="/products" class="hlogo" src="./assets/images/logo.PNG" alt="">
+          <strong class="header-title">HappyEats</strong>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">           
+              <li class="nav-item">
+                  <button class="btn bthHead" routerLink="/home">
+                    <i class="fas fa-users fa-lg"></i> Home</button>
+              </li>           
+              
+            <li class="nav-item">
+              <button class="btn bthHead" routerLink="/merchantMenu">Menu</button>
+          </li>
+          <li class="nav-item">
+                  <button class="btn bthHead float-right" (click)="clearLocal()">Logout</button>
+              </li>
+          </ul>
+      </div>
+  </nav>
+  <hr>
+</div>
+
+<form (ngSubmit)="onSubmit()">
+
+<div class="card align-contents">
+<div class="table-responsive panel">
+    <table class="table">
+      <tbody>
+      <tr>
+        <td></td>
+        <td><div class="container" style="height: 75px;">
+          <div *ngIf="present==false" class="alert alert-danger alert-box" align="center" style="width: 60%; margin: auto;">
+            <strong>Item ID Not Unique!</strong>
+          </div>
+          <div *ngIf="present" class="alert alert-success alert-box" align="center" style="width: 60%; margin: auto;">
+            <strong>Item ID Unique</strong>
+          </div>
+        </div></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="text-success" align="right"><i class="fa fa-user"></i> Item Id</td>
+        <td><input placeholder="Item Id" type="text" minlength="3" maxlength="3"
+                   [(ngModel)]="newFoodItems.id" name="id" required="required"></td>
+        <td><button style="position: absolute; left: 68%" type="button" (click)="checkAvailability()"><span>Check Availability</span></button></td>
+      </tr>
+      <tr>
+        <td class="text-success" align="right"><i class="fa fa-user-circle"></i> Item Name</td>
+        <td><input placeholder="Item Name" type="text" minlength="2" maxlength="20"
+                   [(ngModel)]="newFoodItems.name" name="name" required="required"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="text-success" align="right"><i class="fa fa-mobile"></i> Price (INR)</td>
+        <td><input placeholder="Price" type="number"
+                   name="price" [(ngModel)]="newFoodItems.price" required="required" min="0"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="text-success" align="right"><i class="fa fa-mobile">
+
+        </i> Type - 1 for Snacks/2 for Beverages</td>
+        <td><input placeholder="Type" type="number"
+                   name="type" [(ngModel)]="newFoodItems.type" required="required" min="0"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="text-success" align="right"><i class="fa fa-envelope"></i> Available Quantity</td>
+        <td><input placeholder="Available Quantity" type="number"
+                   name="quantity" [(ngModel)]="newFoodItems.quantityAvailable" required="required" min="0"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="text-success" align="right"><i class="fa fa-envelope"></i> Food Image</td>
+        <td><input type="file" (change)="onFileSelected($event)"></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <td class="text-success" align="right"><i class="fa fa-envelope"></i> OR</td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <td class="text-success" align="right"><i class="fa fa-envelope"></i> Food Image URL</td>
+        <td><input type="text" placeholder="Paste The Url" name="fileDataF" [(ngModel)]="newFoodItems.fileDataF"></td>
+        <td></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="container" align="center" style="margin-left: 20%;">
+ 
+  <button class="bigbutton" type="submit"><span>AddItem</span></button>
+</div>
+</form>
+
+</div>

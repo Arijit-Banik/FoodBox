@@ -1,0 +1,59 @@
+
+<div class="body">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div>
+          <img routerLink="/products" class="logo" src="./assets/images/logo.PNG" alt="">
+          <strong class="header-title">HappyEats</strong>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            
+              <li class="nav-item">
+                  <button class="btn bthHead" routerLink="/home">
+                    <i class="fas fa-users fa-lg"></i> Home</button>
+              </li>
+              <li class="nav-item">
+                  <button class="btn bthHead" routerLink="/menu">
+                    <i class="fas fa-shopping-basket fa-lg"></i> Menu</button>
+              </li>
+             
+              <li class="nav-item">
+                  <button class="btn bthHead float-right" (click)="clearLocal()">Logout</button>
+              </li>
+          </ul>
+      </div>
+  </nav>
+  <hr>
+
+
+<div class="body" >
+<div class="body">
+  <p><img  style="padding: 0 15px; float: left;" src="../../assets/images/user.png" alt="Card image cap"><font>Welcome, {{modelUser.firstname}}<br> Account Type : User</font></p>
+  <div >
+    <table >
+      <tbody>
+
+      <tr>
+        <td class="text-success" align="right"><i class="fa fa-user"></i> First Name</td>
+        <td>{{modelUser.firstname}}</td>
+      </tr>
+      <tr>
+        <td class="text-success" align="right"><i class="fa fa-user-circle"></i> Last Name</td>
+        <td>{{modelUser.lastname}}</td>
+      </tr>
+      <tr>
+        <td class="text-success" align="right"><i class="fa fa-mobile"></i> Mobile Number</td>
+        <td>{{modelUser.phone}}</td>
+      </tr>
+      <tr>
+        <td class="text-success" align="right"><i class="fa fa-envelope"></i> E-Mail ID</td>
+        <td>{{modelUser.email}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+
+
+</div>
